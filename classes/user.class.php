@@ -28,6 +28,11 @@ class User {
 			return false;
 		}
 	}
+
+	public function getAllUsers(){
+		$this->db->query('SELECT id, firstname, lastname, email FROM users');
+		return $this->db->resultset();
+	}
 }
 
 ?>

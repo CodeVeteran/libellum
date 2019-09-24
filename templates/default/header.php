@@ -26,6 +26,7 @@ if($session->isLoggedIn()){
         <script src="/lib/jquery3.4.1/jquery.min.js"></script>
         <script src="/lib/bootstrap4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="/assets/css/dashboard.css">
+        <link href="/lib/fontawesome-5.11.2/css/all.css" rel="stylesheet">
     <head>
     <body>
 
@@ -33,7 +34,7 @@ if($session->isLoggedIn()){
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/app/dashboard.php">Libellum</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="app/logout.php">Sign out</a>
+          <a class="nav-link" href="/app/logout.php">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -47,6 +48,12 @@ if($session->isLoggedIn()){
                 <a class="nav-link <?php echo ($page == 'dashboard' ? 'active' : '')?>" href="/app/dashboard.php">
                   <span data-feather="home"></span>
                   Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php echo ($page == 'users' ? 'active' : '')?>" href="/app/users/index.php">
+                  <span data-feather="home"></span>
+                  Users</span>
                 </a>
               </li>
             </ul>

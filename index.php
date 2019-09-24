@@ -1,3 +1,16 @@
+<?php
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/classes/user.class.php');
+
+if(isset($_POST['signIn'])){
+    $user = new User();
+    if($user->login($_POST['email'], $_POST['password'])){
+        header('Location: /app/dashboard.php');
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,18 +27,18 @@
                     <div class="card card-signin my-5">
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
-                            <form class="form-signin">
+                            <form class="form-signin" method="POST">
                                 <div class="form-label-group">
-                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="email">
                                     <label for="inputEmail">Email address</label>
                                 </div>
 
                                 <div class="form-label-group">
-                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
                                     <label for="inputPassword">Password</label>
                                 </div>
 
-                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" name="signIn" type="submit">Sign in</button>
                             
                             </form>
                         </div>

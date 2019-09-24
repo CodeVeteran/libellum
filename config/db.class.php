@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class Database{
 
@@ -9,6 +10,7 @@ class Database{
 
     private $dbh;  
     private $error;
+    private $stmt;
 
     public function __construct(){  
         // Set DSN  
@@ -47,6 +49,10 @@ class Database{
             }  
         }  
         $this->stmt->bindValue($param, $value, $type);  
+    }  
+
+    public function query($query){  
+        $this->stmt = $this->dbh->prepare($query);  
     }  
 
     public function execute(){  

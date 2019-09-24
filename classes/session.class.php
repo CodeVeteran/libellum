@@ -13,6 +13,10 @@ class Session {
 	function isLoggedIn(){
 		return isset($_SESSION['USER']) && $_SESSION['USER']['ID'] != NULL;
 	}
+
+	function isExpired(){
+		return time() - $_SESSION['USER']['LOGGED_TIME'] > 3600;
+	}
 }
 
 ?>

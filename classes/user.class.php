@@ -22,6 +22,7 @@ class User {
 			$_SESSION['USER']['ID'] = $row['id'];
 			$_SESSION['USER']['FIRSTNAME'] = $row['firstname'];
 			$_SESSION['USER']['LASTNAME'] = $row['lastname'];
+			$_SESSION['USER']['LOGGED_TIME'] = time();
 			return true;
 		}else{
 			return false;

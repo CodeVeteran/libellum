@@ -16,7 +16,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/templates/default/header.php');
     <h1 class="h2">Users</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group">
-            <a class="btn btn-sm btn-outline-secondary" href="/app/users/edit.php?id=0"><i class="fas fa-plus"></i> Add user</a>
+            <a class="btn btn-sm btn-primary" href="/app/users/edit.php?id=0"><i class="fas fa-plus"></i> Add user</a>
         </div>
     </div>
 </div>

@@ -6,6 +6,8 @@ if(isset($_POST['signIn'])){
     $user = new User();
     if($user->login($_POST['email'], $_POST['password'])){
         header('Location: /app/dashboard.php');
+    }else{
+        $error = 'Can\'t login with these credentials';
     }
 }
 ?>
@@ -28,6 +30,11 @@ if(isset($_POST['signIn'])){
                         <div class="card-body">
                             <h5 class="card-title text-center">Sign In</h5>
                             <form class="form-signin" method="POST">
+                                <?php
+                                    if(isset($error)){
+                                        echo '<div class="alert alert-danger">' . $error . '</div>';
+                                    }
+                                ?>
                                 <div class="form-label-group">
                                     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="email">
                                     <label for="inputEmail">Email address</label>

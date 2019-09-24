@@ -1,6 +1,7 @@
 <?php
 
 $title = 'Dashboard';
+$page = 'dashboard';
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/templates/default/header.php');
 

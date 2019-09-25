@@ -81,6 +81,13 @@ class User {
 		$this->db->execute();
 	}
 
+	public function delete(){
+		$this->db->query('DELETE FROM users WHERE id = :id');
+		$this->db->bind('id', $this->id);
+
+		$this->db->execute();
+	}
+
 
 }
 
